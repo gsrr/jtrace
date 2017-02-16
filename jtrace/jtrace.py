@@ -37,3 +37,5 @@ def handle_trace(sig, frame):
 def jtrace_listen():
     signal.signal(signal.SIGUSR1, handle_trace)
     
+def hello():
+    print "Hello World!!"
