@@ -3,14 +3,14 @@ import os
 import sys
 import traceback
 import threading
+import datetime
 
 DEBUG_MODE = False
 
 def log_trace(msgs):
     msg = "::".join(msgs)
     with open("./trace.log", 'a') as fw:
-        print msg
-        fw.write("%s\n"%msg)
+        fw.write("[%s]%s\n"%(datetime.datetime.now(), msg))
 
 def tracefunc(frame, event, arg, indent=[0]):
     try:
